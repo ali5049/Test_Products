@@ -2,10 +2,22 @@ import React, {memo} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import HomeStack from './HomeStack';
-
+import Home from '../Screens/HomeScreen';
+import ProductsScreen from '../Screens/ProductsScreen';
 export const SignedOutStack = createStackNavigator();
 
+function HomeStack(Stack) {
+  return (
+    <>
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen
+        options={{title: 'Products'}}
+        name="ProductsScreen"
+        component={ProductsScreen}
+      />
+    </>
+  );
+}
 const SignedOutContainer = memo(() => {
   return (
     <SignedOutStack.Navigator headerMode="float">

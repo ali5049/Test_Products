@@ -1,7 +1,7 @@
 import React from 'react';
-import {SafeAreaView, View, Text, TouchableOpacity} from 'react-native';
-import {styles} from './HomeScreen.style';
-import {FullButton} from '../../Components';
+import {SafeAreaView,StyleSheet} from 'react-native';
+
+import {FullButton} from '../Components';
 import {useNavigation} from '@react-navigation/native';
 const Home = () => {
   const navigation = useNavigation();
@@ -14,5 +14,14 @@ const Home = () => {
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
+
 
 export default Home;
